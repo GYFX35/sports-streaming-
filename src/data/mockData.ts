@@ -25,6 +25,67 @@ export interface PodcastItem {
   episodes: number;
 }
 
+export interface HighlightItem {
+  id: number;
+  title: string;
+  image: string;
+  category: string;
+}
+
+export interface LiveScore {
+  id: number;
+  homeTeam: string;
+  awayTeam: string;
+  homeScore: number;
+  awayScore: number;
+  time: string;
+  status: 'live' | 'finished' | 'upcoming';
+  league: string;
+}
+
+export const LIVE_SCORES_DATA: LiveScore[] = [
+  {
+    id: 1,
+    homeTeam: "Arsenal",
+    awayTeam: "Man City",
+    homeScore: 2,
+    awayScore: 1,
+    time: "75'",
+    status: 'live',
+    league: "Premier League"
+  },
+  {
+    id: 2,
+    homeTeam: "Real Madrid",
+    awayTeam: "Barcelona",
+    homeScore: 0,
+    awayScore: 0,
+    time: "20:00",
+    status: 'upcoming',
+    league: "La Liga"
+  },
+  {
+    id: 3,
+    homeTeam: "Lakers",
+    awayTeam: "Warriors",
+    homeScore: 112,
+    awayScore: 108,
+    time: "Final",
+    status: 'finished',
+    league: "NBA"
+  },
+  {
+    id: 4,
+    homeTeam: "Liverpool",
+    awayTeam: "Chelsea",
+    homeScore: 3,
+    awayScore: 3,
+    time: "90+4'",
+    status: 'live',
+    league: "Premier League"
+  }
+];
+
 export const NEWS_DATA: NewsItem[] = [
   {
     id: 1,
@@ -103,5 +164,32 @@ export const PODCASTS_DATA: PodcastItem[] = [
     duration: "30 mins",
     thumbnail: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&q=80&w=400",
     episodes: 210
+  }
+];
+
+export const HIGHLIGHTS_DATA: HighlightItem[] = [
+  {
+    id: 1,
+    title: "Final Lap Thriller",
+    image: "https://images.unsplash.com/photo-1596727147705-61a532a77a47?auto=format&fit=crop&q=80&w=400",
+    category: "Racing"
+  },
+  {
+    id: 2,
+    title: "Buzzer Beater",
+    image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=400",
+    category: "Basketball"
+  },
+  {
+    id: 3,
+    title: "Unbelievable Goal",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=400",
+    category: "Football"
+  },
+  {
+    id: 4,
+    title: "Match Point Rally",
+    image: "https://images.unsplash.com/photo-1622279457486-62dcc4a4bd13?auto=format&fit=crop&q=80&w=400",
+    category: "Tennis"
   }
 ];
