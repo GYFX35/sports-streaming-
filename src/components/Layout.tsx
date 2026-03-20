@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { Home, Newspaper, PlayCircle, Mic2, Search, Bell, User } from 'lucide-react';
+import LiveScores from './LiveScores';
 
 const Navbar = () => {
   return (
@@ -70,6 +71,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      <LiveScores />
       <div className="flex">
         <Sidebar />
         <main className="flex-1 lg:ml-64 p-6">

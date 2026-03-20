@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# SportStream - Sports News & Streaming Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SportStream is a modern, high-performance web application designed for sports enthusiasts. It provides a centralized hub for the latest sports news, live event streaming, real-time scores, and trending podcasts.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Live Scores Ticker:** Stay updated with real-time match results from major leagues (Premier League, NBA, La Liga, etc.) across the top of every page.
+- **Dynamic News Feed:** Access the latest trending stories with categorized news articles and detailed summaries.
+- **Live Streaming & Highlights:** Watch live sports events or catch up on the best moments with our dedicated video highlights section.
+- **Podcast Hub:** Listen to the most popular sports podcasts with an integrated mini-player for a seamless experience.
+- **Responsive Design:** A sleek, mobile-friendly interface built with Tailwind CSS, featuring a persistent sidebar and intuitive navigation.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** [React 19](https://react.dev/)
+- **Bundler:** [Vite](https://vitejs.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Routing:** [React Router DOM](https://reactrouter.com/)
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js (v18 or higher)
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 🏗️ Build & Deployment
+
+To build the project for production:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The output will be in the `dist/` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📄 License
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

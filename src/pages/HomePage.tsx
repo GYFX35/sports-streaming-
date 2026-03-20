@@ -1,4 +1,4 @@
-import { NEWS_DATA, STREAMS_DATA, PODCASTS_DATA } from '../data/mockData';
+import { NEWS_DATA, STREAMS_DATA, PODCASTS_DATA, HIGHLIGHTS_DATA } from '../data/mockData';
 import { Newspaper, PlayCircle, Mic2, TrendingUp, Calendar, Eye, Headphones } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -61,7 +61,7 @@ const HomePage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {STREAMS_DATA.slice(0, 2).map((item) => (
-            <div key={item.id} className="relative group rounded-2xl overflow-hidden aspect-video">
+            <div key={item.id} className="relative group rounded-2xl overflow-hidden aspect-video shadow-lg">
               <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 flex flex-col justify-between p-6">
                 <div className="flex justify-between items-start">
@@ -78,6 +78,24 @@ const HomePage = () => {
                     <PlayCircle className="w-4 h-4 fill-current" /> Watch Stream
                   </button>
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2"><TrendingUp className="w-6 h-6 text-blue-600" /> Top Highlights</h2>
+          <button className="text-blue-600 font-semibold hover:underline">Browse Highlights</button>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {HIGHLIGHTS_DATA.map((item) => (
+            <div key={item.id} className="group relative aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer">
+              <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4">
+                <span className="text-white font-bold text-sm line-clamp-2 leading-tight group-hover:text-blue-400 transition-colors">{item.title}</span>
+                <PlayCircle className="w-6 h-6 text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
           ))}
