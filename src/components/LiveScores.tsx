@@ -3,29 +3,34 @@ import { Trophy } from 'lucide-react';
 
 const LiveScores = () => {
   return (
-    <div className="bg-slate-50 border-y border-slate-200 py-3 overflow-hidden">
-      <div className="flex items-center gap-4 px-6 overflow-x-auto no-scrollbar scroll-smooth">
-        <div className="flex items-center gap-2 pr-4 border-r border-slate-200 flex-shrink-0">
-          <Trophy className="w-4 h-4 text-blue-600" />
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-900">Live Scores</span>
+    <div className="bg-surface-900 border-b border-white/5 py-3 overflow-hidden shadow-2xl">
+      <div className="flex items-center gap-6 px-8 overflow-x-auto no-scrollbar scroll-smooth">
+        <div className="flex items-center gap-2.5 pr-6 border-r border-white/10 flex-shrink-0">
+          <div className="bg-brand-500/10 p-1 rounded-md">
+            <Trophy className="w-4 h-4 text-brand-400" />
+          </div>
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">Live Scores</span>
         </div>
 
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-4 items-center">
           {LIVE_SCORES_DATA.map((match) => (
-            <div key={match.id} className="flex items-center gap-4 bg-white px-4 py-1.5 rounded-lg border border-slate-100 shadow-sm flex-shrink-0">
+            <div key={match.id} className="flex items-center gap-4 bg-white/5 px-5 py-2 rounded-xl border border-white/5 hover:bg-white/10 transition-colors cursor-pointer flex-shrink-0 group">
               <div className="flex flex-col items-end">
-                <span className="text-xs font-bold text-slate-900 uppercase truncate w-20 text-right block">{match.homeTeam}</span>
-                <span className="text-xs font-bold text-slate-900 uppercase truncate w-20 text-right block">{match.awayTeam}</span>
+                <span className="text-[11px] font-bold text-slate-300 uppercase truncate w-24 text-right block group-hover:text-white transition-colors">{match.homeTeam}</span>
+                <span className="text-[11px] font-bold text-slate-300 uppercase truncate w-24 text-right block group-hover:text-white transition-colors">{match.awayTeam}</span>
               </div>
-              <div className="flex flex-col items-center bg-slate-900 text-white px-2 py-0.5 rounded min-w-[32px]">
-                <span className="text-[10px] font-bold leading-tight">{match.homeScore}</span>
-                <span className="text-[10px] font-bold leading-tight">{match.awayScore}</span>
+              <div className="flex flex-col items-center bg-brand-600 text-white px-2.5 py-1 rounded-lg min-w-[36px] shadow-lg shadow-brand-900/40">
+                <span className="text-xs font-black leading-tight">{match.homeScore}</span>
+                <span className="text-xs font-black leading-tight">{match.awayScore}</span>
               </div>
               <div className="flex flex-col">
-                <span className={`text-[10px] font-bold uppercase ${match.status === 'live' ? 'text-red-600 animate-pulse' : 'text-slate-400'}`}>
-                  {match.time}
-                </span>
-                <span className="text-[8px] text-slate-400 uppercase tracking-tighter">{match.league}</span>
+                <div className="flex items-center gap-1.5">
+                  {match.status === 'live' && <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>}
+                  <span className={`text-[10px] font-bold uppercase tracking-wide ${match.status === 'live' ? 'text-red-500' : 'text-slate-500'}`}>
+                    {match.time}
+                  </span>
+                </div>
+                <span className="text-[8px] text-slate-500 font-bold uppercase tracking-widest mt-0.5">{match.league}</span>
               </div>
             </div>
           ))}
