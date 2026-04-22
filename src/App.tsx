@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import NewsPage from './pages/NewsPage';
 import StreamingPage from './pages/StreamingPage';
 import PodcastsPage from './pages/PodcastsPage';
+import ResourcesPage from './pages/ResourcesPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/streaming" element={<StreamingPage />} />
           <Route path="/podcasts" element={<PodcastsPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
         </Routes>
       </Layout>
     </Router>

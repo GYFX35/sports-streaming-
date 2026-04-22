@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Newspaper, PlayCircle, Mic2, Search, Bell } from 'lucide-react';
+import { Home, Newspaper, PlayCircle, Mic2, Search, Bell, Database } from 'lucide-react';
 import LiveScores from './LiveScores';
 
 const Navbar = () => {
@@ -47,6 +47,7 @@ const Sidebar = () => {
     { icon: Newspaper, label: 'News', path: '/news' },
     { icon: PlayCircle, label: 'Streaming', path: '/streaming' },
     { icon: Mic2, label: 'Podcasts', path: '/podcasts' },
+    { icon: Database, label: 'Resources', path: '/resources' },
   ];
 
   return (
