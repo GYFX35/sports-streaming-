@@ -140,6 +140,40 @@ export const STREAMS_DATA: StreamItem[] = [
   }
 ];
 
+export interface UserSubmission {
+  id: number;
+  userName: string;
+  userAvatar: string;
+  type: 'image' | 'video';
+  contentUrl: string;
+  caption: string;
+  timestamp: string;
+  likes: number;
+}
+
+export const USER_SUBMISSIONS: UserSubmission[] = [
+  {
+    id: 1,
+    userName: "Alex Rivera",
+    userAvatar: "https://i.pravatar.cc/100?img=11",
+    type: 'image',
+    contentUrl: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=800",
+    caption: "What an atmosphere at the stadium today! 🏟️",
+    timestamp: "15 mins ago",
+    likes: 124
+  },
+  {
+    id: 2,
+    userName: "Sarah Chen",
+    userAvatar: "https://i.pravatar.cc/100?img=32",
+    type: 'video',
+    contentUrl: "https://assets.mixkit.co/videos/preview/mixkit-basketball-player-scoring-a-basket-4852-large.mp4",
+    caption: "Check out this amazing dunk! 🏀🔥",
+    timestamp: "1 hour ago",
+    likes: 856
+  }
+];
+
 export const PODCASTS_DATA: PodcastItem[] = [
   {
     id: 1,

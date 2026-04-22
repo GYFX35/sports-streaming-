@@ -1,5 +1,6 @@
 import { NEWS_DATA } from '../data/mockData';
-import { Calendar, ChevronRight } from 'lucide-react';
+import { Calendar, ChevronRight, Share2 } from 'lucide-react';
+import { shareContent } from '../services/share';
 
 const NewsPage = () => {
   return (
@@ -54,9 +55,17 @@ const NewsPage = () => {
                 {news.summary}
               </p>
               <div className="flex items-center justify-between pt-5 border-t border-surface-50">
-                <button className="flex items-center gap-2 text-brand-600 font-black text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
-                  Read Full Story <ChevronRight className="w-4 h-4" />
-                </button>
+                <div className="flex gap-4">
+                  <button className="flex items-center gap-2 text-brand-600 font-black text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                    Read Full Story <ChevronRight className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => shareContent(news.title, news.summary, window.location.href)}
+                    className="p-2 hover:bg-surface-50 rounded-lg transition-colors text-surface-400 hover:text-brand-600"
+                  >
+                    <Share2 className="w-4 h-4" />
+                  </button>
+                </div>
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
                     <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-surface-200 overflow-hidden">

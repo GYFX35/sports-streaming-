@@ -1,5 +1,6 @@
 import { STREAMS_DATA } from '../data/mockData';
 import { Play, Eye, Maximize2, Share2, MoreHorizontal, PlayCircle } from 'lucide-react';
+import { shareContent } from '../services/share';
 
 const StreamingPage = () => {
   const activeStream = STREAMS_DATA[0];
@@ -39,7 +40,12 @@ const StreamingPage = () => {
                </div>
             </div>
             <div className="flex gap-3">
-              <button className="p-3 bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 rounded-2xl transition-all text-white"><Share2 className="w-5 h-5" /></button>
+              <button
+                onClick={() => shareContent(activeStream.title, `Watching ${activeStream.title} on SportStream!`, window.location.href)}
+                className="p-3 bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 rounded-2xl transition-all text-white"
+              >
+                <Share2 className="w-5 h-5" />
+              </button>
               <button className="p-3 bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 rounded-2xl transition-all text-white"><Maximize2 className="w-5 h-5" /></button>
             </div>
           </div>
