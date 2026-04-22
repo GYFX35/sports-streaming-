@@ -32,6 +32,23 @@ export interface HighlightItem {
   category: string;
 }
 
+export interface LeagueItem {
+  id: number;
+  name: string;
+  country: string;
+  logo: string;
+  category: string;
+}
+
+export interface ScheduleItem {
+  id: number;
+  event: string;
+  time: string;
+  date: string;
+  category: string;
+  status: 'upcoming' | 'reminder-set';
+}
+
 export interface LiveScore {
   id: number;
   homeTeam: string;
@@ -137,6 +154,64 @@ export const STREAMS_DATA: StreamItem[] = [
     views: "250K",
     live: true,
     category: "Tennis"
+  }
+];
+
+export const LEAGUES_DATA: LeagueItem[] = [
+  {
+    id: 1,
+    name: "Premier League",
+    country: "England",
+    logo: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=200",
+    category: "Football"
+  },
+  {
+    id: 2,
+    name: "NBA",
+    country: "USA",
+    logo: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=80&w=200",
+    category: "Basketball"
+  },
+  {
+    id: 3,
+    name: "La Liga",
+    country: "Spain",
+    logo: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=200",
+    category: "Football"
+  },
+  {
+    id: 4,
+    name: "Formula 1",
+    country: "Global",
+    logo: "https://images.unsplash.com/photo-1596727147705-61a532a77a47?auto=format&fit=crop&q=80&w=200",
+    category: "Racing"
+  }
+];
+
+export const SCHEDULE_DATA: ScheduleItem[] = [
+  {
+    id: 1,
+    event: "Man Utd vs Liverpool",
+    time: "15:00",
+    date: "Tomorrow",
+    category: "Football",
+    status: 'upcoming'
+  },
+  {
+    id: 2,
+    event: "Wimbledon Final",
+    time: "14:00",
+    date: "Sunday",
+    category: "Tennis",
+    status: 'upcoming'
+  },
+  {
+    id: 3,
+    event: "Monaco Grand Prix",
+    time: "13:00",
+    date: "Sunday",
+    category: "Racing",
+    status: 'reminder-set'
   }
 ];
 
