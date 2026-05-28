@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { STREAMS_DATA } from '../data/mockData';
-import { Play, Eye, Maximize2, Share2, MoreHorizontal, PlayCircle } from 'lucide-react';
+import { Play, Eye, Maximize2, Share2, MoreHorizontal, PlayCircle, Languages } from 'lucide-react';
 
 const StreamingPage = () => {
+  const [aiTranslation, setAiTranslation] = useState(false);
+  const [selectedLang, setSelectedLang] = useState('French');
   const activeStream = STREAMS_DATA[0];
 
   return (
@@ -39,6 +42,26 @@ const StreamingPage = () => {
                </div>
             </div>
             <div className="flex gap-3">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl px-3 text-white">
+                <button
+                  onClick={() => setAiTranslation(!aiTranslation)}
+                  className={`flex items-center gap-2 text-[10px] font-black uppercase tracking-widest transition-colors ${aiTranslation ? 'text-brand-400' : 'text-white'}`}
+                >
+                  <Languages className="w-4 h-4" />
+                  AI Translation {aiTranslation ? 'ON' : 'OFF'}
+                </button>
+                {aiTranslation && (
+                  <select
+                    value={selectedLang}
+                    onChange={(e) => setSelectedLang(e.target.value)}
+                    className="bg-transparent text-[10px] font-bold outline-none border-l border-white/20 ml-2 pl-2"
+                  >
+                    <option className="bg-surface-900" value="French">FR</option>
+                    <option className="bg-surface-900" value="Spanish">ES</option>
+                    <option className="bg-surface-900" value="Japanese">JP</option>
+                  </select>
+                )}
+              </div>
               <button className="p-3 bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 rounded-2xl transition-all text-white"><Share2 className="w-5 h-5" /></button>
               <button className="p-3 bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 rounded-2xl transition-all text-white"><Maximize2 className="w-5 h-5" /></button>
             </div>
